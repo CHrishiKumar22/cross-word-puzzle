@@ -1,0 +1,15 @@
+<StackLayout class="p-4">
+  <Label text="Across" class="text-xl font-bold mb-2"/>
+  <ListView items="{{ acrossClues }}" class="mb-4">
+    <ListView.itemTemplate>
+      <Label text="{{ number }}. {{ clue }}" textWrap="true" class="text-lg mb-2"/>
+    </ListView.itemTemplate>
+  </ListView>
+
+  <Label text="Down" class="text-xl font-bold mb-2"/>
+  <ListView items="{{ downClues }}" class="mb-4">
+    <ListView.itemTemplate>
+      <Label text="{{ number }}. {{ clue }}" textWrap="true" class="text-lg mb-2"/>
+    </ListView.itemTemplate>
+  </ListView>
+</StackLayout>

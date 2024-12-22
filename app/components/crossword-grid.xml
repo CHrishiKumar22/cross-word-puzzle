@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <GridLayout rows="auto, *" class="p-4">
+    <Label text="Crossword Puzzle" class="text-2xl font-bold mb-4" row="0"/>
+    <GridLayout rows="repeat(5, auto)" columns="repeat(5, auto)" row="1" class="border border-gray-300">
+      <Repeater items="{{ grid }}" row="1">
+        <Repeater.itemsLayout>
+          <GridLayout rows="auto" columns="repeat(5, auto)"/>
+        </Repeater.itemsLayout>
+        <Repeater.itemTemplate>
+          <GridLayout class="border border-gray-300 w-12 h-12">
+            <Label text="{{ number }}" class="text-xs text-gray-500 absolute top-0 left-1" visibility="{{ number ? 'visible' : 'collapsed' }}"/>
+            <TextField text="{{ $parents['Repeater'].currentInput[$index][$index] }}" 
+                      class="text-center" 
+                      maxLength="1" 
+                      returnKeyType="next"
+                      autocapitalizationType="allCharacters"
+                      visibility="{{ isBlack ? 'collapsed' : 'visible' }}"
+                      tap="{{ onCellTap }}"
+                      textChange="{{ onTextChange }}"/>
+          </GridLayout>
+        </Repeater.itemTemplate>
+      </Repeater>
+    </GridLayout>
+  </GridLayout>
+</Page>

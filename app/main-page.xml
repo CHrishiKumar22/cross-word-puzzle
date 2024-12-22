@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Crossword Puzzle" icon="" />
+    
+    <ScrollView>
+        <StackLayout>
+            <include src="components/crossword-grid.xml" />
+            <include src="components/clue-list.xml" />
+            
+            <Button text="Check Solution" tap="{{ checkSolution }}" class="btn btn-primary m-4" />
+            <Label text="{{ message }}" class="text-lg text-center" textWrap="true" />
+        </StackLayout>
+    </ScrollView>
+</Page>
